@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Financial Report</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'core/styles.css' %}">
+</head>
+<body>
+    <h1>Financial Report</h1>
+    <h2>Incomes</h2>
+    <ul>
+        {% for income in incomes %}
+            <li>{{ income.date }}: {{ income.amount }} ({{ income.source }})</li>
+        {% endfor %}
+    </ul>
+    <h2>Expenses</h2>
+    <ul>
+        {% for expense in expenses %}
+            <li>{{ expense.date }}: {{ expense.amount }} ({{ expense.category }})</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

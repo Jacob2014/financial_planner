@@ -1,0 +1,25 @@
+{% extends "core/base.html" %}
+
+{% block title %}Add Income{% endblock %}
+
+{% block content %}
+<h1>Add Income</h1>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Add Income</button>
+</form>
+{% endblock %}
+
+{% block extra_head %}
+<script type="text/javascript">
+    $(function () {
+        $('.datepickerinput').datepicker({
+            format: 'yyyy-mm-dd',
+            todayBtn: 'linked',
+            clearBtn: true,
+            todayHighlight: true
+        });
+    });
+</script>
+{% endblock %}
